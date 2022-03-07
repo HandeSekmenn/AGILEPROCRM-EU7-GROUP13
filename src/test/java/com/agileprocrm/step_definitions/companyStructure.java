@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 import java.util.concurrent.TimeUnit;
 
 public class companyStructure extends LoginPage {
-    WebDriver driver;
+
     @When("the user writes {string} in the search box and hits the enter")
     public void the_user_writes_in_the_search_box_and_hits_the_enter(String string) throws InterruptedException {
         loginAsHR();
@@ -27,12 +27,9 @@ public class companyStructure extends LoginPage {
     @Then("user should be able to display the company structure")
     public void user_should_be_able_to_display_the_company_structure() {
 
-        String actualurl = driver.getCurrentUrl();
+        String actualurl = Driver.get().getCurrentUrl();
         String expectedurl = "https://qa.agileprocrm.com/company/vis_structure.php";
         Assert.assertEquals(expectedurl,actualurl);
-
-
-        //verify etmek kaldı
 
     }
 }
