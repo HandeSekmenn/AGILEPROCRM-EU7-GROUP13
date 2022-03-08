@@ -25,33 +25,39 @@ public class sendMessagePhoneDirectory extends LoginPage {
 
     @Then("the user should be navigated to the telephone directory webpage")
     public void the_user_should_be_navigated_to_the_telephone_directory_webpage() {
-       String actualtURL= Driver.get().getCurrentUrl();
+       String actualURL= Driver.get().getCurrentUrl();
        String expectedURL = "https://qa.agileprocrm.com/company/telephones.php";
-        Assert.assertEquals(actualtURL,expectedURL);
+        Assert.assertEquals(actualURL,expectedURL);
     }
 
     @When("the user clicks on {string}.")
     public void the_user_clicks_on(String string) {
-
+        WebElement employee = Driver.get().findElement(By.xpath("//*[starts-with(@id,'anchor')]"));
+        employee.click();
     }
 
     @Then("the user should be navigated to the emplooyee's page")
     public void the_user_should_be_navigated_to_the_emplooyee_s_page() {
-
+        String actualURL= Driver.get().getCurrentUrl();
+        String expectedURL= "https://qa.agileprocrm.com/company/personal/user/479/";
+        Assert.assertEquals(actualURL,expectedURL);
     }
 
     @When("the user clicks on send message")
     public void the_user_clicks_on_send_message() {
-
+        WebElement sendMessageBtn = Driver.get().findElement(By.className(".webform-small-button-text"));
     }
 
     @When("writes {string} in the message box and hits the enter")
     public void writes_in_the_message_box_and_hits_the_enter(String string) {
-
+    WebElement messagebox= Driver.get().findElement(By.className(".bx-messenger-textarea-input"));
+    messagebox.sendKeys("hello");
+    messagebox.sendKeys(Keys.ENTER);
     }
 
     @Then("the message should have been sent")
     public void the_message_should_have_been_sent() {
+    Driver.get().findElement(By.xpath("//*[contains(text(), 'hello')]"));
 
     }
 
