@@ -25,4 +25,8 @@ public class companyStructure extends LoginPage {
     }
 
 
+    @Then("user should be able to display the company structure")
+    public void userShouldBeAbleToDisplayTheCompanyStructure() {
+
+    }
 }

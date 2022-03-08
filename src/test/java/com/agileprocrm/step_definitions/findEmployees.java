@@ -34,7 +34,7 @@ public class findEmployees extends LoginPage {
     @When("user clicks on find employee")
     public void user_clicks_on_find_employee() {
 
-        Driver.get().findElement(By.cssSelector("div[class='main-buttons-item']")).click();
+        Driver.get().findElement(By.className(".main-buttons-item-text']")).click();
 
         //BURAYA TEKRAR BAK
 
