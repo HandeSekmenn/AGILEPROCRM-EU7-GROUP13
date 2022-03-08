@@ -6,7 +6,7 @@ Feature: Find employees
 
   Scenario: User should be able to find employees by search box
 
-    When user writes "employees" in searchbox and hits the enter
+    When user writes employees in searchbox and hits the enter
     Then the user should be navigated to the company employees page
     When user clicks on find employee
     Then the user should be able to display the find employee page

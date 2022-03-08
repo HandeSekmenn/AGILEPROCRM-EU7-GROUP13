@@ -12,20 +12,19 @@ import org.openqa.selenium.WebElement;
 
 public class findEmployees extends LoginPage {
 
-        @When("user writes {string} in searchbox and hits the enter")
+        @When("user writes employees in searchbox and hits the enter")
     public void user_writes_in_searchbox_and_hits_the_enter(String string) throws InterruptedException {
         loginAsHR();
         WebElement searchBox= Driver.get().findElement(By.id("search-textbox-input"));
         searchBox.sendKeys("employees");
         Thread.sleep(2500);
-        WebElement abc = Driver.get().findElement(By.className("search-title-top-item-link"));
-       abc.click();
-        // searchBox.sendKeys(Keys.ENTER);
+
+        searchBox.sendKeys(Keys.ENTER);
 
     }
 
     @Then("the user should be navigated to the company employees page")
-    public void the_user_should_nbe_navigated_to_the_company_employees_page() {
+    public void the_user_should_be_navigated_to_the_company_employees_page() {
         String actualTitle = Driver.get().getCurrentUrl();
         String expectedTitle = "https://qa.agileprocrm.com/company/vis_structure.php";
         Assert.assertEquals(expectedTitle,actualTitle);
@@ -35,9 +34,7 @@ public class findEmployees extends LoginPage {
     @When("user clicks on find employee")
     public void user_clicks_on_find_employee() {
 
-        WebElement findemployeesFrame = Driver.get().findElement(By.id("maininterfacebuttons-tmp-frame-top_menu_id_company"));
-        Driver.get().switchTo().frame(findemployeesFrame);
-        Driver.get().findElement(By.className("webform-small-button-text")).click();
+        Driver.get().findElement(By.cssSelector("div[class='main-buttons-item']")).click();
 
         //BURAYA TEKRAR BAK
 
