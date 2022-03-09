@@ -27,16 +27,17 @@ public class addDepartment extends LoginPage {
     }
 
     @When("user clicks on add department")
-    public void user_clicks_on(String string) {
-        WebElement addDepartment = Driver.get().findElement(By.className(".webform-small-button-text"));
+    public void user_clicks_on() {
+        WebElement addDepartment = Driver.get().findElement(By.xpath("//span[@class='webform-small-button-text']"));
         addDepartment.click();
     }
 
     @When("user writes {string} in the box and clicks on add")
     public void user_writes_in_the_box_and_clicks_on() {
-    WebElement box=Driver.get().findElement(By.id("NAME"));
+    WebElement box=Driver.get().findElement(By.xpath("(//input[@type='text'])[2]"));
+    box.click();
     box.sendKeys("department name");
-    WebElement addButton = Driver.get().findElement(By.id("Add"));
+    WebElement addButton = Driver.get().findElement(By.xpath("//span[@class='popup-window-button popup-window-button-accept']"));
     addButton.click();
 
     }

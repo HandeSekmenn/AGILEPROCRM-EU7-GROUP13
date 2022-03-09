@@ -18,8 +18,6 @@ public class sendMessagePhoneDirectory extends LoginPage {
         searchBox.sendKeys("Telephone Directory");
         Thread.sleep(3000);
         searchBox.sendKeys(Keys.ENTER);
-        WebElement telephoneDirectoryBtn = Driver.get().findElement(By.className(".Telephone Directory"));
-        telephoneDirectoryBtn.click();
     }
 
     @Then("the user should be navigated to the telephone directory webpage")
@@ -29,8 +27,8 @@ public class sendMessagePhoneDirectory extends LoginPage {
         Assert.assertEquals(actualURL,expectedURL);
     }
 
-    @When("the user clicks on {string}.")
-    public void the_user_clicks_on(String string) {
+    @When("the user clicks on Arben Istrefi")
+    public void the_user_clicks_on() {
         WebElement employee = Driver.get().findElement(By.xpath("//*[starts-with(@id,'anchor')]"));
         employee.click();
     }
