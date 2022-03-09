@@ -24,9 +24,12 @@ public class companyStructure extends LoginPage {
 
     }
 
-
     @Then("user should be able to display the company structure")
     public void userShouldBeAbleToDisplayTheCompanyStructure() {
+
+        String actualurl= Driver.get().getCurrentUrl();
+        String expectedurl="https://qa.agileprocrm.com/company/vis_structure.php";
+        Assert.assertEquals(actualurl,expectedurl);
 
     }
 }
