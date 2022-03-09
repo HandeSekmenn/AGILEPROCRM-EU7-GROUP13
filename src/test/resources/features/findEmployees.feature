@@ -1,14 +1,19 @@
 @fe
 
-Feature: Find employees
+Feature: Find employee
 
-  Background: The user is on home page
+  Scenario Outline: User should be able to find employees by search box
 
-  Scenario: User should be able to find employees by search box
+    Given The user logged in as "<user>"
 
-    When user writes employees in searchbox and hits the enter
-    Then the user should be navigated to the company employees page
-    When user clicks on find employee
-    Then the user should be able to display the find employee page
-    When the user write "Murad" to the search box on the page and hits the enter
-    Then the user should be able to display "Murad"
+    When user writes find employee in searchbox and hits the enter
+    Then the user should be navigated to the find employee page
+    When the user write Arben to the search box on the page and hits the enter
+    Then the user should be able to display Arbens page
+
+    Examples:
+
+      | user               |
+      | hr_username        |
+      | helpdesk_username       |
+      | marketing_username       |
