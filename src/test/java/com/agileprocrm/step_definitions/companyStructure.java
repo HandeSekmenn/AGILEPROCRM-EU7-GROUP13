@@ -16,7 +16,6 @@ public class companyStructure extends LoginPage {
 
     @When("the user writes {string} in the search box and hits the enter")
     public void the_user_writes_in_the_search_box_and_hits_the_enter(String string) throws InterruptedException {
-        loginAsHR();
         WebElement searchBox=Driver.get().findElement(By.id("search-textbox-input"));
         searchBox.sendKeys("Company Structure");
         Thread.sleep(3000);

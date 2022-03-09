@@ -14,7 +14,6 @@ public class sendMessagePhoneDirectory extends LoginPage {
 
     @When("the user writes telephone directory in the searchbox and hits enter")
     public void the_user_writes_telephone_directory_in_the_searchbox_and_hits_enter() throws InterruptedException {
-        loginAsHR();
         WebElement searchBox= Driver.get().findElement(By.id("search-textbox-input"));
         searchBox.sendKeys("Telephone Directory");
         Thread.sleep(3000);

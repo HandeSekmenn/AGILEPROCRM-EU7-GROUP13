@@ -11,11 +11,8 @@ import org.openqa.selenium.WebElement;
 
 public class uploadFileDefs extends LoginPage {
 
-    WebDriver driver;
-
     @Given("the user is on the home page")
     public void the_user_is_on_the_home_page() {
-        loginAsHelpDesk();
 
     }
 

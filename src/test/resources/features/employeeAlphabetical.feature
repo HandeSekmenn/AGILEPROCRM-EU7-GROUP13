@@ -2,9 +2,9 @@
 
 Feature: Find employees  by alphabet
 
-  Background: The user is on home page
+  Scenario Outline: User should be able to find employees by search by Alphabet
 
-  Scenario: User should be able to find employees by search by Alphabet
+    Given The user logged in as "<user>"
 
     When user writes "employees" in searchbox and hits the enter
     Then the user should be navigated to the company employees page
@@ -16,3 +16,9 @@ Feature: Find employees  by alphabet
     Then the user should display the "Murad Boz" employee
 
 
+    Examples:
+
+      | user               |
+      | hr_username        |
+      | helpdesk_username  |
+      | marketing_username |

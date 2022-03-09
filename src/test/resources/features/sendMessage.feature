@@ -1,5 +1,6 @@
 @test
   Feature:Sending Message
+
     Scenario Outline: User should be able to find employees by search box
 
       Given The user logged in as "<user>"
@@ -12,3 +13,5 @@
 
         | user               |
         | hr_username        |
+        | helpdesk_username  |
+        | marketing_username |

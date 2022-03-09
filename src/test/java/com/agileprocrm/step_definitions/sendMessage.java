@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 public class sendMessage extends LoginPage {
     @When("the user clicks on send message, message box should be enabled")
     public void the_user_clicks_on_send_message_message_box_should_be_enabled()  {
-        loginAsHelpDesk();
+
         Driver.get().findElement(By.xpath("//*[@id=\"microoPostFormLHE_blogPostForm_inner\"]/span[1]")).click();
 
     }

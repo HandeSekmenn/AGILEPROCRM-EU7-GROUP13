@@ -8,3 +8,9 @@ Feature: Display company structure
     When the user writes "Company Structure" in the search box and hits the enter
     Then user should be able to display the company structure
 
+    Examples:
+
+      | user               |
+      | hr_username        |
+      | helpdesk_username  |
+      | marketing_username |

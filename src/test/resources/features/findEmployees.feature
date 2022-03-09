@@ -15,5 +15,5 @@ Feature: Find employee
 
       | user               |
       | hr_username        |
-      | helpdesk_username       |
-      | marketing_username       |
+      | helpdesk_username  |
+      | marketing_username |

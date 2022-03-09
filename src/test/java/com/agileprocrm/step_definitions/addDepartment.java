@@ -13,7 +13,6 @@ public class addDepartment extends LoginPage {
 
     @When("user writes {string} in the box and clicks on {string}")
     public void user_writes_in_the_box_and_clicks_on(String string, String string2) {
-        loginAsHR();
         WebElement searchBox= Driver.get().findElement(By.id("search-textbox-input"));
         searchBox.sendKeys("Company Structure");
         WebElement companyStructure = Driver.get().findElement(By.id("pagetitle-menu"));
