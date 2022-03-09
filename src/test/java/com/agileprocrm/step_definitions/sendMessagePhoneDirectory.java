@@ -45,7 +45,7 @@ public class sendMessagePhoneDirectory extends LoginPage {
 
     @When("the user clicks on send message")
     public void the_user_clicks_on_send_message() {
-        WebElement sendMessageBtn = Driver.get().findElement(By.className(".webform-small-button-text"));
+        WebElement sendMessageBtn = Driver.get().findElement(By);
     }
 
     @When("writes {string} in the message box and hits the enter")
