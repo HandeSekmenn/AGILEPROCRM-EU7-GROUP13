@@ -1,5 +1,3 @@
-@fe
-
 Feature: Find employee
 
   Scenario Outline: User should be able to find employees by search box
