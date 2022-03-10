@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/agileprocrm/step_definitions",
         dryRun = false,
-        tags = "@ad"
+        tags = "@ee"
 )
 
 public class CukesRunner {

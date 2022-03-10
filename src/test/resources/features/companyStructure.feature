@@ -1,4 +1,3 @@
-@cs
 Feature: Display company structure
 
 
