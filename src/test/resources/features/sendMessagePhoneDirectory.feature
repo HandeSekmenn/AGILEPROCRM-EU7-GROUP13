@@ -1,5 +1,3 @@
-@smpd
-
 Feature: Send message from phone directory
 
   Scenario Outline: User should be able to send message to employee from the telephone directory

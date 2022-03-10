@@ -12,6 +12,8 @@ import org.openqa.selenium.WebElement;
 
 public class sendMessagePhoneDirectory extends LoginPage {
 
+    //DONE**************************************************
+
     @When("the user writes telephone directory in the searchbox and hits enter")
     public void the_user_writes_telephone_directory_in_the_searchbox_and_hits_enter() throws InterruptedException {
         WebElement searchBox= Driver.get().findElement(By.id("search-textbox-input"));
@@ -29,7 +31,7 @@ public class sendMessagePhoneDirectory extends LoginPage {
 
     @When("the user clicks on Arben Istrefi")
     public void the_user_clicks_on() {
-        WebElement employee = Driver.get().findElement(By.xpath("//*[starts-with(@id,'anchor')]"));
+        WebElement employee = Driver.get().findElement(By.xpath("(//a[starts-with(@id,'anchor_')])[1]"));
         employee.click();
     }
 
@@ -42,19 +44,22 @@ public class sendMessagePhoneDirectory extends LoginPage {
 
     @When("the user clicks on send message")
     public void the_user_clicks_on_send_message() {
-       // WebElement sendMessageBtn = Driver.get().findElement(By);
+       WebElement sendMessageBtn = Driver.get().findElement(By.xpath("//span[@class='webform-small-button-text']"));
+        sendMessageBtn.click();
     }
 
     @When("writes {string} in the message box and hits the enter")
     public void writes_in_the_message_box_and_hits_the_enter(String string) {
-    WebElement messagebox= Driver.get().findElement(By.className(".bx-messenger-textarea-input"));
+    WebElement messagebox= Driver.get().findElement(By.xpath("//textarea[@class='bx-messenger-textarea-input']"));
+    messagebox.click();
     messagebox.sendKeys("hello");
     messagebox.sendKeys(Keys.ENTER);
     }
 
     @Then("the message should have been sent")
     public void the_message_should_have_been_sent() {
-    Driver.get().findElement(By.xpath("//*[contains(text(), 'hello')]"));
+    Driver.get().findElement(By.xpath("//span[@class='bx-messenger-message']"));
+    Driver.get().getPageSource().contains("hello");
 
     }
 
