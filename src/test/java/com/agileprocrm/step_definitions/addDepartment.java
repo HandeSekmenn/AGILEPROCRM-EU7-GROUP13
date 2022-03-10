@@ -2,6 +2,7 @@ package com.agileprocrm.step_definitions;
 
 import com.agileprocrm.pages.LoginPage;
 import com.agileprocrm.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -12,11 +13,12 @@ import org.openqa.selenium.WebElement;
 public class addDepartment extends LoginPage {
 
     @When("user writes {string} in the box and clicks on {string}")
-    public void user_writes_in_the_box_and_clicks_on(String string, String string2) {
+    public void user_writes_in_the_box_and_clicks_on(String string, String string2) throws InterruptedException {
         WebElement searchBox= Driver.get().findElement(By.id("search-textbox-input"));
         searchBox.sendKeys("Company Structure");
         WebElement companyStructure = Driver.get().findElement(By.id("pagetitle-menu"));
         companyStructure.click();
+        Thread.sleep(15000);
     }
 
     @Then("user should be able to display the company structure.")
@@ -26,15 +28,15 @@ public class addDepartment extends LoginPage {
         Assert.assertEquals(actualURL,expectedURL);
     }
 
-    @When("user clicks on add department")
-    public void user_clicks_on() {
+    @And("user clicks on add department")
+    public void user_clicks_on_add_department() {
         WebElement addDepartment = Driver.get().findElement(By.xpath("//span[@class='webform-small-button-text']"));
         addDepartment.click();
     }
 
     @When("user writes {string} in the box and clicks on add")
-    public void user_writes_in_the_box_and_clicks_on() {
-    WebElement box=Driver.get().findElement(By.xpath("(//input[@type='text'])[2]"));
+    public void user_writes_in_the_box_and_clicks_on_add(String string) {
+    WebElement box=Driver.get().findElement(By.id("NAME"));
     box.click();
     box.sendKeys("department name");
     WebElement addButton = Driver.get().findElement(By.xpath("//span[@class='popup-window-button popup-window-button-accept']"));
